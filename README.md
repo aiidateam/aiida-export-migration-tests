@@ -5,7 +5,7 @@ Test modules for migration of [AiiDA](http://www.aiida.net) export files.
 Can be installed by adding `testing` package, when installing AiiDA:
 
 ```shell
-pip install aiida[testing]
+pip install aiida-core[testing]
 ```
 
 ## Q&A
