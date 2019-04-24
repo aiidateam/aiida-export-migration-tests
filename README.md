@@ -15,7 +15,7 @@ including when tests for the different export versions are first included.
 
 | This module | AiiDA | Export versions (when first included) |
 | ----------- | ----- | ------------------------------------- |
-| 0.1.0 | [1.0.0](https://github.com/aiidateam/aiida_core/releases/tag/v1.0.0) | 0.1 -> 0.2 , 0.2 -> 0.3 , 0.3 -> 0.4 |
+| 0.1.0 | [1.0.0](https://github.com/aiidateam/aiida_core/releases/tag/v1.0.0) | 0.1 -> 0.2 ; 0.2 -> 0.3 ; 0.3 -> 0.4 |
 
 ## Q&A
 
@@ -63,7 +63,7 @@ PR [#2478](https://github.com/aiidateam/aiida_core/pull/2478)).
 \*Due to the following reasons, we decided **not** to invest an effort in making
 the representative archive migration for 0.1:
 
-1. AiiDA 0.6.0.1 was never released on PyPi.
+1. The earliest version released on PyPi is 0.8.0rc1 (22.03.2017).
 1. The previous stable version (AiiDA 0.5.0) was not working in a virtual environment.
 1. The migration from v0.1 to v0.2 is small and quite simple.
    If an export file should be found that cannot be properly migrated, due to this step,
@@ -82,9 +82,9 @@ and correspond to the following export versions and
 | Export version | Workflow | Run workflow script | Quantum Mobile |
 | -------------- | -------- | ------------------- | -------------- |
 | ~~v0.1~~* | - | - | - |
-| v0.2 | [wf.py](https://raw.githubusercontent.com/aiidateam/aiida-export_migration-testing/v0.1.0/.qm/wf.py) | [run_wf.py](https://raw.githubusercontent.com/aiidateam/aiida-export_migration-testing/v0.1.0/.qm/run_wf.py) | [historical_aiida_0.9.1](https://github.com/marvel-nccr/quantum-mobile/tree/historical_aiida_0.9.1) |
-| v0.3 | [wf.py](https://raw.githubusercontent.com/aiidateam/aiida-export_migration-testing/v0.1.0/.qm/wf.py) | [run_wf.py](https://raw.githubusercontent.com/aiidateam/aiida-export_migration-testing/v0.1.0/.qm/run_wf.py) | [v19.03.0](https://github.com/marvel-nccr/quantum-mobile/releases/tag/19.03.0) |
-| v0.4 | [wf_aiida_1.0.py](https://raw.githubusercontent.com/aiidateam/aiida-export_migration-testing/v0.1.0/.qm/wf_aiida_1.0.py) | [run_wf_aiida_1.0.py](https://raw.githubusercontent.com/aiidateam/aiida-export_migration-testing/v0.1.0/.qm/run_wf_aiida_1.0.py) | _in development_ |
+| v0.2 | [wf.py](.qm/wf.py) | [run_wf.py](.qm/run_wf.py) | [historical_aiida_0.9.1](https://github.com/marvel-nccr/quantum-mobile/tree/historical_aiida_0.9.1) |
+| v0.3 | [wf.py](.qm/wf.py) | [run_wf.py](.qm/run_wf.py) | [v19.03.0](https://github.com/marvel-nccr/quantum-mobile/releases/tag/19.03.0) |
+| v0.4 | [wf_aiida_1.0.py](.qm/wf_aiida_1.0.py) | [run_wf_aiida_1.0.py](.qm/run_wf_aiida_1.0.py) | _in development_ |
 
 \*See section _Release notes#0.1.0 (April 2019)_.
 
