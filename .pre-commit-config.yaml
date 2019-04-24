@@ -7,7 +7,9 @@
     types: [python]
     args: ["-i"]
     exclude: &exclude_files >
-      (?x)^()$
+      (?x)^(
+        .qm/.*|
+      )$
 
 # modernizer: make sure our code-base is Python 3 ready
 - repo: https://github.com/python-modernize/python-modernize.git
@@ -15,7 +17,9 @@
   hooks:
   - id: python-modernize
     exclude: >
-      (?x)^()$
+      (?x)^(
+        .qm/.*|
+      )$
     args:
       - --write
       - --nobackups
