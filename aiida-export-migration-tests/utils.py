@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Utility functions to import fixtures, such as export archives"""
+"""Utility functions to import archives, such as export archives"""
 from __future__ import division
 from __future__ import print_function
 from __future__ import absolute_import
@@ -19,7 +19,7 @@ def get_archive_file(archive, core_file=False):
     """
     Return the absolute path of the archive file used for testing purposes. The expected path for these files:
 
-        aiida-export_migration-testing.fixtures
+        aiida-export_migration-testing.archives
 
     :param archive: the relative filename of the archive
     :param core_file: Whether or not the file is located in aiida_core repo or the current repo.
@@ -37,14 +37,14 @@ def get_archive_file(archive, core_file=False):
     else:
         # Add filepath to local repo
         dirpath_current = os.path.dirname(os.path.realpath(__file__))
-        dirpath_fixtures = os.path.join(dirpath_current, 'fixtures')
+        dirpath_archives = os.path.join(dirpath_current, 'archives')
 
-        dirpath_archive = os.path.join(dirpath_fixtures, archive)
+        dirpath_archive = os.path.join(dirpath_archives, archive)
 
     if not os.path.isfile(dirpath_archive):
         dirpath_parent = os.path.dirname(dirpath_archive)
         raise ValueError(
-            'archive {} does not exist in the fixture directory {}'.format(
+            'archive {} does not exist in the archives directory {}'.format(
                 archive, dirpath_parent))
 
     return dirpath_archive

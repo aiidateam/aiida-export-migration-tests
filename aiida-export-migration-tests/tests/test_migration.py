@@ -59,11 +59,11 @@ class TestExportFileMigration(AiidaTestCase):
         from aiida.common.folders import SandboxFolder
         from aiida.common.json import load as jsonload
 
-        # Get metadata.json and data.json as dicts from v0.1 file fixture
-        # Cannot use 'get_json_files' for 'export_v0.1_no_UPF.aiida',
+        # Get metadata.json and data.json as dicts from v0.1 file archive
+        # Cannot use 'get_json_files' for 'export_v0.1_simple.aiida',
         # because we need to pass the SandboxFolder to 'migrate_recursively'
         dirpath_archive = get_archive_file(
-            "export_v0.1_no_UPF.aiida", core_file=True)
+            "export_v0.1_simple.aiida", core_file=True)
 
         with SandboxFolder(sandbox_in_repo=False) as folder:
             if zipfile.is_zipfile(dirpath_archive):

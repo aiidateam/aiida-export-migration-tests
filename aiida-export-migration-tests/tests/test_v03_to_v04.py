@@ -26,16 +26,18 @@ class TestMigrateV03toV04(AiidaTestCase):
 
     def test_migrate_v3_to_v4(self):
         """Test function migrate_v3_to_v4"""
-        # Get metadata.json and data.json as dicts from v0.4 file fixture
+        from aiida import get_version
+
+        # Get metadata.json and data.json as dicts from v0.4 file archive
         metadata_v4, data_v4 = get_json_files(
-            "export_v0.4_no_UPF.aiida", core_file=True)
+            "export_v0.4_simple.aiida", core_file=True)
         verify_metadata_version(metadata_v4, version='0.4')
 
-        # Get metadata.json and data.json as dicts from v0.3 file fixture
-        # Cannot use 'get_json_files' for 'export_v0.3_no_UPF.aiida',
+        # Get metadata.json and data.json as dicts from v0.3 file archive
+        # Cannot use 'get_json_files' for 'export_v0.3_simple.aiida',
         # because we need to pass the SandboxFolder to 'migrate_v3_to_v4'
         dirpath_archive = get_archive_file(
-            "export_v0.3_no_UPF.aiida", core_file=True)
+            "export_v0.3_simple.aiida", core_file=True)
 
         with SandboxFolder(sandbox_in_repo=False) as folder:
             if zipfile.is_zipfile(dirpath_archive):
@@ -71,25 +73,31 @@ class TestMigrateV03toV04(AiidaTestCase):
         metadata_v3.pop('aiida_version')
         metadata_v4.pop('aiida_version')
 
-        # Assert changes were performed correctly
+        # Assert conversion message in `metadata.json` is correct and then remove it for later assertions
         self.maxDiff = None  # pylint: disable=invalid-name
+        conversion_message = "Converted from version 0.3 to 0.4 with AiiDA v{}".format(get_version())
+        self.assertEqual(metadata_v3.pop('conversion_info')[-1], conversion_message,
+            msg="The conversion message after migration is wrong")
+        metadata_v4.pop('conversion_info')
+
+        # Assert changes were performed correctly
         self.assertDictEqual(
             metadata_v3,
             metadata_v4,
             msg=
-            "After migration, metadata.json should equal intended metadata.json from fixture"
+            "After migration, metadata.json should equal intended metadata.json from archives"
         )
         self.assertDictEqual(
             data_v3,
             data_v4,
             msg=
-            "After migration, data.json should equal intended data.json from fixture"
+            "After migration, data.json should equal intended data.json from archives"
         )
 
     def test_migrate_v3_to_v4_complete(self):
         """Test migration for file containing complete v0.3 era possibilities"""
 
-        # Get metadata.json and data.json as dicts from v0.3 file fixture
+        # Get metadata.json and data.json as dicts from v0.3 file archive
         dirpath_archive = get_archive_file("export_v0.3.aiida")
 
         # Migrate
@@ -136,7 +144,7 @@ class TestMigrateV03toV04(AiidaTestCase):
             migrate_v3_to_v4(metadata, data, folder)
             verify_metadata_version(metadata, version='0.4')
 
-        ## Following checks are based on the fixture-file
+        ## Following checks are based on the archive-file
         ## Which means there are more legal entities, they are simply not relevant here.
 
         self.maxDiff = None  # pylint: disable=invalid-name
@@ -336,7 +344,7 @@ class TestMigrateV03toV04(AiidaTestCase):
         (AiiDA versions 0.12.3 versus 1.0.0b2)
         NB: Since PKs and UUIDs will have changed, comparisons between 'data.json'-files will be made indirectly
         """
-        # Get metadata.json and data.json as dicts from v0.3 file fixture and migrate
+        # Get metadata.json and data.json as dicts from v0.3 file archive and migrate
         dirpath_archive = get_archive_file("export_v0.3.aiida")
 
         # Migrate
@@ -367,7 +375,7 @@ class TestMigrateV03toV04(AiidaTestCase):
             # Migrate to v0.4
             migrate_v3_to_v4(metadata_v3, data_v3, folder)
 
-        # Get metadata.json and data.json as dicts from v0.4 file fixture
+        # Get metadata.json and data.json as dicts from v0.4 file archive
         metadata_v4, data_v4 = get_json_files("export_v0.4.aiida")
 
         # Compare 'metadata.json'

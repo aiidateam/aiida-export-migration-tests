@@ -15,6 +15,7 @@ including when tests for the different export versions are first included.
 
 | This module | AiiDA | Export versions (when first included) |
 | ----------- | ----- | ------------------------------------- |
+| 0.1.1 | [1.0.0](https://github.com/aiidateam/aiida_core/releases/tag/v1.0.0) | |
 | 0.1.0 | [1.0.0](https://github.com/aiidateam/aiida_core/releases/tag/v1.0.0) | 0.1 -> 0.2 ; 0.2 -> 0.3 ; 0.3 -> 0.4 |
 
 ## Q&A
@@ -36,6 +37,30 @@ will still be found in [aiida-core](https://github.com/aiidateam/aiida_core).
 This repo is only for testing the incremental migration functions for different export versions.
 
 ## Release notes
+
+### 0.1.1 (May 2019)
+
+**AiiDA version**: _1.0.0_
+
+Minor fixes due to changes in [aiida-core](https://github.com/aiidateam/aiida_core).
+
+Folder `fixtures` changes name to `archives` to match the same change happening
+for aiida-core.  
+The simple AiiDA export archives in aiida-core representing the different export versions
+have changed names:
+
+- `export_v0.1_no_UPF.aiida` -> `export_v0.1_simple.aiida`
+- `export_v0.2_no_UPF.aiida` -> `export_v0.2_simple.aiida`
+- `export_v0.3_no_UPF.aiida` -> `export_v0.3_simple.aiida`
+- `export_v0.4_no_UPF.aiida` -> `export_v0.4_simple.aiida`
+
+A change in the conversion message included in `metadata.json` files,
+when a migration has been successfully performed, introduces the version of AiiDA
+into the message. In order to have the tests be version-agnostic,
+the `conversion_info` key has to be handled specially in the relevant tests.  
+When migrating an archive, it is asserted that the correct conversion message appears
+in the migrated archive, and the `conversion_info` item is then popped from both
+the migrated archive and the archive imported for comparison.
 
 ### 0.1.0 (April 2019)
 
