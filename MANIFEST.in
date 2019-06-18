@@ -1,2 +1,2 @@
 include aiida-export-migration-tests/archives/*.aiida
-include .qm/*.py
+include aiida-export-migration-tests/.qm/*

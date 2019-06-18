@@ -101,9 +101,9 @@ The workflows can be found in the repository's folder `.qm`, and correspond to t
 | Export version | Workflow | Run workflow script | Quantum Mobile |
 | -------------- | -------- | ------------------- | -------------- |
 | ~~v0.1~~* | - | - | - |
-| v0.2 | [wf.py](.qm/wf.py) | [run_wf.py](.qm/run_wf.py) | [historical_aiida_0.9.1](https://github.com/marvel-nccr/quantum-mobile/tree/historical_aiida_0.9.1) |
-| v0.3 | [wf.py](.qm/wf.py) | [run_wf.py](.qm/run_wf.py) | [v19.03.0](https://github.com/marvel-nccr/quantum-mobile/releases/tag/19.03.0) |
-| v0.4 | [wf_aiida_1.0.py](.qm/wf_aiida_1.0.py) | [run_wf_aiida_1.0.py](.qm/run_wf_aiida_1.0.py) | _in development_ |
+| v0.2 | [wf.py](aiida-export-migration-tests/.qm/wf.py) | [run_wf.py](aiida-export-migration-tests/.qm/run_wf.py) | [historical_aiida_0.9.1](https://github.com/marvel-nccr/quantum-mobile/tree/historical_aiida_0.9.1) |
+| v0.3 | [wf.py](aiida-export-migration-tests/.qm/wf.py) | [run_wf.py](aiida-export-migration-tests/.qm/run_wf.py) | [v19.03.0](https://github.com/marvel-nccr/quantum-mobile/releases/tag/19.03.0) |
+| v0.4 | [wf_aiida_1.0.py](aiida-export-migration-tests/.qm/wf_aiida_1.0.py) | [run_wf_aiida_1.0.py](aiida-export-migration-tests/.qm/run_wf_aiida_1.0.py) | _in development_ |
 
 \*See section _Release notes#0.1.0 (April 2019)_.
 
