@@ -379,6 +379,7 @@ class TestMigrateV03toV04(AiidaTestCase):
         metadata_v4, data_v4 = get_json_files("export_v0.4.aiida")
 
         # Compare 'metadata.json'
+        self.maxDiff = None
         metadata_v3.pop('conversion_info')
         metadata_v3.pop('aiida_version')
         metadata_v4.pop('aiida_version')
