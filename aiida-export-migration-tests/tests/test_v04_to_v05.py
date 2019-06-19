@@ -11,8 +11,8 @@ import tarfile
 import zipfile
 
 from aiida.backends.testbase import AiidaTestCase
-from aiida.cmdline.utils.migration.utils import verify_metadata_version
-from aiida.cmdline.utils.migration.v04_to_v05 import migrate_v4_to_v5
+from aiida.tools.importexport.migration.utils import verify_metadata_version
+from aiida.tools.importexport.migration.v04_to_v05 import migrate_v4_to_v5
 from aiida.common.archive import extract_tar, extract_zip
 from aiida.common.exceptions import NotExistent
 from aiida.common.folders import SandboxFolder

@@ -8,8 +8,8 @@ from __future__ import absolute_import
 import os
 
 from aiida.backends.testbase import AiidaTestCase
-from aiida.cmdline.utils.migration.utils import verify_metadata_version
-from aiida.cmdline.utils.migration.v02_to_v03 import migrate_v2_to_v3
+from aiida.tools.importexport.migration.utils import verify_metadata_version
+from aiida.tools.importexport.migration.v02_to_v03 import migrate_v2_to_v3
 
 from ..utils import get_json_files
 

@@ -14,6 +14,7 @@ Historical table of version comparisons between releases of this module and AiiD
 
 | This module | AiiDA | Export versions (when first included) |
 | ----------- | ----- | ------------------------------------- |
+| [0.5.1](https://github.com/aiidateam/aiida-export-migration-tests/releases/tag/v0.5.1) | [1.0.0b3](https://github.com/aiidateam/aiida_core/releases/tag/v1.0.0b3) | |
 | [0.5.0](https://github.com/aiidateam/aiida-export-migration-tests/releases/tag/v0.5.0) | [1.0.0b3](https://github.com/aiidateam/aiida_core/releases/tag/v1.0.0b3) | 0.4 -> 0.5 |
 | [0.1.1](https://github.com/aiidateam/aiida-export-migration-tests/releases/tag/v0.1.1) | [1.0.0b2](https://github.com/aiidateam/aiida_core/releases/tag/v1.0.0b2) | |
 | [0.1.0](https://github.com/aiidateam/aiida-export-migration-tests/releases/tag/v0.1.0) | [1.0.0b2](https://github.com/aiidateam/aiida_core/releases/tag/v1.0.0b2) | 0.1 -> 0.2 ; 0.2 -> 0.3 ; 0.3 -> 0.4 |
@@ -33,6 +34,13 @@ Furthermore, the legacy export versions will never change, i.e., the incremental
 This repo is only for testing the incremental migration functions for different export versions.
 
 ## Release notes
+
+### 0.5.1 (June 2019)
+
+**AiiDA version**: _1.0.0b3_
+
+Update imports from aiida-core in accordance with the restructuring of the import/export-module.
+For a reference, this was done in aiida-core PR [#3052](https://github.com/aiidateam/aiida_core/pull/3052).
 
 ### 0.5.0 (June 2019)
 

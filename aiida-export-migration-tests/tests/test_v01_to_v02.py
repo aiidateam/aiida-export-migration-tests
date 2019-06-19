@@ -8,8 +8,8 @@ import os
 
 from aiida import get_version
 from aiida.backends.testbase import AiidaTestCase
-from aiida.cmdline.utils.migration.utils import verify_metadata_version
-from aiida.cmdline.utils.migration.v01_to_v02 import migrate_v1_to_v2
+from aiida.tools.importexport.migration.utils import verify_metadata_version
+from aiida.tools.importexport.migration.v01_to_v02 import migrate_v1_to_v2
 
 from ..utils import get_json_files
 

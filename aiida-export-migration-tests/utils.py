@@ -9,10 +9,10 @@ import io
 import tarfile
 import zipfile
 
+from aiida.common import json
 from aiida.common.archive import extract_tar, extract_zip
 from aiida.common.exceptions import NotExistent
 from aiida.common.folders import SandboxFolder
-from aiida.common import json
 
 
 def get_archive_file(archive, core_file=False):
@@ -97,7 +97,7 @@ def migrate_archive(input_file, output_file, silent=True):
     :param input_file: filename with full path for archive to be migrated
     :param output_file: filename with full path for archive to be created after migration
     """
-    from aiida.cmdline.utils.migration import migrate_recursively
+    from aiida.tools.importexport.migration import migrate_recursively
 
     # Unpack archive, migrate, and re-pack archive
     with SandboxFolder(sandbox_in_repo=False) as folder:
