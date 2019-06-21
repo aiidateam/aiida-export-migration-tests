@@ -14,6 +14,7 @@ Historical table of version comparisons between releases of this module and AiiD
 
 | This module | AiiDA | Export versions (when first included) |
 | ----------- | ----- | ------------------------------------- |
+| [0.5.2](https://github.com/aiidateam/aiida-export-migration-tests/releases/tag/v0.5.2) | [1.0.0b3](https://github.com/aiidateam/aiida_core/releases/tag/v1.0.0b3) | |
 | [0.5.1](https://github.com/aiidateam/aiida-export-migration-tests/releases/tag/v0.5.1) | [1.0.0b3](https://github.com/aiidateam/aiida_core/releases/tag/v1.0.0b3) | |
 | [0.5.0](https://github.com/aiidateam/aiida-export-migration-tests/releases/tag/v0.5.0) | [1.0.0b3](https://github.com/aiidateam/aiida_core/releases/tag/v1.0.0b3) | 0.4 -> 0.5 |
 | [0.1.1](https://github.com/aiidateam/aiida-export-migration-tests/releases/tag/v0.1.1) | [1.0.0b2](https://github.com/aiidateam/aiida_core/releases/tag/v1.0.0b2) | |
@@ -21,19 +22,29 @@ Historical table of version comparisons between releases of this module and AiiD
 
 ## Q&A
 
-**Q: Why not include these tests in the core of AiiDA?**  
-**A:** These tests demand fixed AiiDA export files.
-In order to not take up unneccesary disk space, when installing AiiDA, these tests have been separated out of [aiida-core](https://github.com/aiidateam/aiida_core).
+**Q: Why not include these test archives in the core of AiiDA?**  
+**A:** In order to not take up unneccesary disk space, when installing AiiDA, these test archives have been separated out of [aiida-core](https://github.com/aiidateam/aiida_core).
 Furthermore, the legacy export versions will never change, i.e., the incremental migration functions need only be thoroughly tested once, and will therefore not be affected by changes to the core of the AiiDA code in any way.
 
 **Q: What happens when the export version is upped?**  
-**A:** A new export file will be added to this repo as well as a new test-filled file.
+**A:** A new export archive file will be added to this repo as well as a new test-filled file (to [aiida-core](https://github.com/aiidateam/aiida_core) under `aiida.backends.tests.tools.importexport.migration.`).
 
 **Q: What if the import system changes in AiiDA core?**  
-**A:** Tests relying on importing exported files into the AiiDA database will still be found in [aiida-core](https://github.com/aiidateam/aiida_core).
-This repo is only for testing the incremental migration functions for different export versions.
+**A:** This repo is only for storing the export archives and their creation workflows for different export versions.
+All tests can be found in [aiida-core](https://github.com/aiidateam/aiida_core).
 
 ## Release notes
+
+### 0.5.2 (June 2019)
+
+**AiiDA version**: _1.0.0b3_
+
+Remove test files according to issue [#6](https://github.com/aiidateam/aiida-export-migration-tests/issues/6).
+The files have been moved to [aiida-core](https://github.com/aiidateam/aiida_core) under `aiida.backends.tests.tools.importexport.migration.`.
+As explained in the issue, the problem of having tests that concern files in [aiida-core](https://github.com/aiidateam/aiida_core), is that they cannot be skipped with a helpful message using `unittest.skip(<message>)`.
+
+This repository has now become the keeper of the export archives and the workflows that created them.
+Hence, it should only ever be touched, when a new export version is introduced in AiiDA, and a new archive must be added.
 
 ### 0.5.1 (June 2019)
 

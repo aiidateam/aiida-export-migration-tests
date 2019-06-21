@@ -8,7 +8,7 @@
     args: ["-i"]
     exclude: &exclude_files >
       (?x)^(
-        .qm/.*|
+        aiida-export-migration-tests/.qm/*.*|
       )$
 
 # modernizer: make sure our code-base is Python 3 ready
