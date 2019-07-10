@@ -3,11 +3,15 @@
 # Copyright (c), The AiiDA team. All rights reserved.                     #
 # This file is part of the AiiDA code.                                    #
 #                                                                         #
-# The code is hosted on GitHub at https://github.com/aiidateam/aiida_core #
+# The code is hosted on GitHub at https://github.com/aiidateam/aiida-core #
 # For further information on the license, see the LICENSE.txt file        #
 # For further information please visit http://www.aiida.net               #
 ###########################################################################
+# pylint: disable=unexpected-keyword-arg
 
+from __future__ import division
+from __future__ import absolute_import
+from __future__ import print_function
 
 import sys
 import os
@@ -17,7 +21,7 @@ from aiida.plugins.factories import DataFactory
 from aiida.orm import Group
 from aiida.orm import Code
 
-from wf_aiida_1.0 import TestWorkChain
+from wf_aiida_1_0 import TestWorkChain
 ################################################################
 
 StructureData = DataFactory('structure')

@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+# pylint: disable=no-name-in-module,import-error
+from __future__ import absolute_import
+
 from aiida.plugins.factories import DataFactory, CalculationFactory
 from aiida.orm import Code
 from aiida.orm import Int, Float, Str

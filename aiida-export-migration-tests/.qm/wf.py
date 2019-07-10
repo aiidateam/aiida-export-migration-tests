@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+# pylint: disable=no-name-in-module,import-error
+from __future__ import absolute_import
+
 from aiida.orm import DataFactory, CalculationFactory
 from aiida.orm.code import Code
 from aiida.work.workchain import WorkChain, ToContext, Calc
@@ -10,6 +13,7 @@ ParameterData = DataFactory('parameter')
 KpointsData = DataFactory('array.kpoints')
 StructureData = DataFactory('structure')
 PwCalculation = CalculationFactory('quantumespresso.pw')
+
 
 class TestWorkChain(WorkChain):
 
@@ -62,7 +66,7 @@ class TestWorkChain(WorkChain):
 
 
         future = submit(PwCalculation.process(), **inputs)
-	return ToContext(**{label: Calc(future)})
+        return ToContext(**{label: Calc(future)})
 
     def _get_parameters(self, structure, runtype, parent_folder=True):
         params = {'CONTROL': {
