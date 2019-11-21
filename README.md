@@ -14,6 +14,7 @@ Historical table of version comparisons between releases of this module and AiiD
 
 | This module | AiiDA | Export versions (when first included) |
 | ----------- | ----- | ------------------------------------- |
+| [0.8.0](https://github.com/aiidateam/aiida-export-migration-tests/releases/tag/v0.8.0) | [1.0.1](https://github.com/aiidateam/aiida-core/releases/tag/v1.0.1) | 0.8 |
 | [0.7.0](https://github.com/aiidateam/aiida-export-migration-tests/releases/tag/v0.7.0) | [1.0.0b4](https://github.com/aiidateam/aiida-core/releases/tag/v1.0.0b4) | 0.6, 0.7 |
 | 0.6.0 | [1.0.0b4](https://github.com/aiidateam/aiida-core/releases/tag/v1.0.0b4) | |
 | [0.5.2](https://github.com/aiidateam/aiida-export-migration-tests/releases/tag/v0.5.2) | [1.0.0b3](https://github.com/aiidateam/aiida-core/releases/tag/v1.0.0b3) | |
@@ -37,12 +38,25 @@ All tests can be found in [aiida-core](https://github.com/aiidateam/aiida-core).
 
 ## Release notes
 
+### 0.8.0 (November 2019)
+
+**AiiDA version**: _1.0.0_
+
+Update repository with export archive for export version 0.8.
+The file follows the naming of previous export version files having the suffix `_manual`, since it was not produced properly, i.e., through a new workflow run in AiiDA.
+Instead, the export file `export_v0.7_manual.aiida` has been the unpacked, updated manually, and repacked.
+This means the latest "proper" export file is `export_v0.4.aiida`.
+
+Changes are expected to be released with AiiDA version 1.0.1.
+
+*New file*: `export_v0.8_manual.aiida`
+
 ### 0.7.0 (July 2019)
 
 **AiiDA version**: _1.0.0b4_
 
 Update repository with export archive for export versions 0.6 and 0.7.  
-These files are named differently, having the suffix `_manual`, since they were not produced properly, through a new workflow run in AiiDA.
+These files are named differently, having the suffix `_manual`, since they were not produced properly, i.e., through a new workflow run in AiiDA.
 Instead, the export file `export_v0.4.aiida` has been the unpacked, updated manually, and repacked.
 
 The file `export_v0.5.aiida` has also been made this way, and will therefore have its name changed accordingly.
