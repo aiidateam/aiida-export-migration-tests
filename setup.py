@@ -8,7 +8,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="aiida-export-migration-tests",
-    version="0.8.0",
+    version="0.9.0",
     author="The AiiDA team",
     author_email="developers@aiida.net",
     description="Export archives for migration tests for AiiDA",

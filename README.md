@@ -14,6 +14,7 @@ Historical table of version comparisons between releases of this module and AiiD
 
 | This module | AiiDA | Export versions (when first included) |
 | ----------- | ----- | ------------------------------------- |
+| [0.9.0](https://github.com/aiidateam/aiida-export-migration-tests/releases/tag/v0.9.0) | to be released | 0.9 |
 | [0.8.0](https://github.com/aiidateam/aiida-export-migration-tests/releases/tag/v0.8.0) | [1.0.1](https://github.com/aiidateam/aiida-core/releases/tag/v1.0.1) | 0.8 |
 | [0.7.0](https://github.com/aiidateam/aiida-export-migration-tests/releases/tag/v0.7.0) | [1.0.0b4](https://github.com/aiidateam/aiida-core/releases/tag/v1.0.0b4) | 0.6, 0.7 |
 | 0.6.0 | [1.0.0b4](https://github.com/aiidateam/aiida-core/releases/tag/v1.0.0b4) | |
@@ -30,13 +31,26 @@ Historical table of version comparisons between releases of this module and AiiD
 Furthermore, the legacy export versions will never change, i.e., the incremental migration functions need only be thoroughly tested once, and will therefore not be affected by changes to the core of the AiiDA code in any way.
 
 **Q: What happens when the export version is upped?**  
-**A:** A new export archive file will be added to this repo as well as a new test-filled file (to [aiida-core](https://github.com/aiidateam/aiida-core) under `aiida.backends.tests.tools.importexport.migration.`).
+**A:** A new export archive file will be added to this repo as well as a new test-filled file (to [aiida-core](https://github.com/aiidateam/aiida-core) under `tests.tools.importexport.migration.`).
 
 **Q: What if the import system changes in AiiDA core?**  
 **A:** This repo is only for storing the export archives and their creation workflows for different export versions.
 All tests can be found in [aiida-core](https://github.com/aiidateam/aiida-core).
 
 ## Release notes
+
+### 0.9.0 (April 2020)
+
+**AiiDA version**: _To be released_
+
+Update repository with export archive for export version 0.9.
+The file follows the naming of previous export version files having the suffix `_manual`, since it was not produced properly, i.e., through a new workflow run in AiiDA.
+Instead, the export file `export_v0.8_manual.aiida` has been the unpacked, updated manually, and repacked.
+This means the latest "proper" export file is `export_v0.4.aiida`.
+
+Changes are expected to be released with AiiDA version 1.2.0.
+
+*New file*: `export_v0.9_manual.aiida`
 
 ### 0.8.0 (November 2019)
 
